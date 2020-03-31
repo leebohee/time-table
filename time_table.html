@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>2016311477 이보희</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom, white, #A0BDFF);
+    }
+    table {
+      text-align: center;
+    }
+    caption {
+      margin: 15px;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    th {
+      background: #264385;
+      width: 120px;
+      height: 50px;
+      color: #FFFFFF;
+    }
+    td {
+      font-size: 14px;
+      width: 120px;
+      height: 50px;
+    }
+    td:hover {
+      background: #f5f5f5;
+    }
+    table, th, td {
+      border: 1px solid #ddd;
+      border-collapse: collapse;
+    }
+    .time {
+      font-style: italic;
+      font-size: 10px;
+    }
+    ul {
+      width: 700px;
+    }
+    li {
+      padding: 5px 0px 5px 5px;
+      margin-bottom: 5px;
+      border-bottom: 1px solid #efefef;
+      font-size: 14px;
+    }
+  </style>
+  <script>
+    function Click(cname, credit){
+      var target1=document.getElementById(cname);
+      var target2=document.getElementById("credit");
+      
+      if(target1.style.display=="none"){
+        target2.innerHTML=Number(target2.innerHTML)+credit;
+        target1.style.display="block";
+      }
+      else{
+        target2.innerHTML=Number(target2.innerHTML)-credit;
+        target1.style.display="none";
+      }
+    }
+  </script>
+</head>
+<body>
+  <table>
+    <caption>Timetable (<span id="credit">23</span>)</caption>
+    <tr><th>/</th> <th>Mon</th> <th>Tue</th> <th>Wed</th> <th>Thu</th> <th>Fri</th></tr>
+    <tr><th>01교시<br><span class="time">09:00 ~ 10:15</span></th> <td></td> <td></td> <td></td> <td rowspan=2><span id="proj">프로젝트연구<br>첨단강의실<br>(9B113)</span></td> <td></td></tr>
+    <tr><th>02교시<br><span class="time">10:30 ~ 11:45</span></th> <td></td> <td></td> <td rowspan=2><span id="IT">IT영어논문작성법<br>원격화상강의실(23219)</span></td>> <td rowspan=4><span id="research">개별연구1</span></td></tr>
+    <tr><th>03교시<br><span class="time">13:00 ~ 14:15</span></th> <td><span id="AI">인공지능개론<br>첨단강의실<br>(400126)</span></td> <td><span id="ML">기계학습<br>e+녹화강의실<br>(26312)</span></td> <td></td></tr>
+    <tr><th>04교시<br><span class="time">14:00 ~ 15:45</span></th> <td></td> <td><span id="DB">데이터베이스개론<br>호암관 (50106)</span></td> <td></td> <td></td></tr>
+    <tr><th>05교시<br><span class="time">16:00 ~ 17:15</span></th> <td></td> <td></td> <td><span id="EW">영어글쓰기<br>호암관 (50106)</span></td> <td></td></tr>
+    <tr><th>06교시<br><span class="time">17:30 ~ 18:45</span></th> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
+    <tr><th>07교시<br><span class="time">19:00 ~ 20:15</span></th> <td><span id="prac4">소프트웨어실습4<br>첨단PC실 (21514)</span></td> <td></td> <td></td> <td rowspan=2><span id="algo">알고리즘개론<br>e+녹화강의실<br>(26312)</span></td> <td></td></tr>
+    <tr><th>08교시<br><span class="time">20:30 ~ 21:45</span></th> <td></td> <td></td> <td></td> <td></td></tr>
+  </table>
+
+  <ul>
+    <li><input type="checkbox" checked onClick="Click('AI', 3)">인공지능개론 (3)</li>
+    <li><input type="checkbox" checked onClick="Click('prac4', 3)">소프트웨어실습4 (3)</li>
+    <li><input type="checkbox" checked onClick="Click('ML', 3)">기계학습 (3)</li>
+    <li><input type="checkbox" checked onClick="Click('DB', 2)">데이터베이스개론 (2)</li>
+    <li><input type="checkbox" checked onClick="Click('IT', 2)">IT영어논문작성법 (2)</li>
+    <li><input type="checkbox" checked onClick="Click('EW', 2)">영어글쓰기 (2)</li>
+    <li><input type="checkbox" checked onClick="Click('proj', 3)">프로젝트연구 (3)</li>
+    <li><input type="checkbox" checked onClick="Click('algo', 3)">알고리즘개론 (3)</li>
+    <li><input type="checkbox" checked onClick="Click('research', 2)">개별연구1 (2)</li>
+  </ul>
+</body>
+</html>
